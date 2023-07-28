@@ -3,25 +3,53 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+  --step-0: clamp(1rem, calc(0.94rem + 0.27vw), 1.13rem);
+  --step-1: clamp(1.5rem, calc(1.24rem + 1.09vw), 2rem);
+  --step-2: clamp(1.63rem, calc(1.18rem + 1.9vw), 2.5rem);
+  --step-3: clamp(2.25rem, calc(1.61rem + 2.72vw), 3.5rem);
+
+  --space-3xs: clamp(0.25rem, calc(0.21rem + 0.22vw), 0.38rem);
+  --space-2xs: clamp(0.5rem, calc(0.41rem + 0.43vw), 0.75rem);
+  --space-xs: clamp(0.75rem, calc(0.62rem + 0.65vw), 1.13rem);
+  --space-s: clamp(1rem, calc(0.83rem + 0.87vw), 1.5rem);
+  --space-m: clamp(1.5rem, calc(1.24rem + 1.3vw), 2.25rem);
+  --space-l: clamp(2rem, calc(1.65rem + 1.74vw), 3rem);
+  --space-xl: clamp(3rem, calc(2.48rem + 2.61vw), 4.5rem);
+  --space-2xl: clamp(4rem, calc(3.3rem + 3.48vw), 6rem);
+  --space-3xl: clamp(6rem, calc(4.96rem + 5.22vw), 9rem);
+}
+@font-face {
+  font-style: normal;
+  font-weight: 700;
+  src: url("/assets/fonts/PlusJakartaSans-Bold.woff2") format("woff2");
+  font-family: "Plus Jakarta Sans";
+  font-display: swap;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+@font-face {
+  font-style: normal;
+  font-weight: 500;
+  src: url("/assets/fonts/PlusJakartaSans-Medium.woff2") format("woff2");
+  font-family: "Plus Jakarta Sans";
+  font-display: swap;
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+p {
+  max-width: 55ch;
+  font-family: "Plus Jakarta Sans";
+}
+
+h1,
+h2 {
+  /* color: var(--very-dark-gray); */
+  line-height: 1.25;
+  font-family: "Plus Jakarta Sans";
+}
+
+h1 {
+  font-size: var(--step-3);
+}
+
+h2 {
+  font-size: var(--step-2);
 }
